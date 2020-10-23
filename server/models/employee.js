@@ -15,6 +15,30 @@ class Employee {
       throw error;
     }
   }
+
+  async create(data) {
+    const me = this;
+    try {
+      const {
+        lastName,
+        firstName,
+        birthDate,
+        address,
+        postalCode,
+        country,
+        email
+      } = data;
+
+      let empId = await me.tx.one(
+        `INSERT INTO "Employee" ("LastName", "FirstName", "BirthDate", "Address", "PostalCode", "Country", "Email") values ($1, $2, $3, $4, $5, $6, $7) returning "EmployeeId"`,
+        [lastName, firstName, birthDate, address, postalCode, country, email]
+      )
+      return empId;
+    } catch (error) {
+      console.error('Error during employee creation', data);
+      throw error;
+    }
+  }
 }
 
 module.exports = Employee;

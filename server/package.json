@@ -19,6 +19,7 @@
   "dependencies": {
     "hapi": "^18.1.0",
     "pg": "^8.4.1",
-    "pg-promise": "^10.7.0"
+    "pg-promise": "^10.7.0",
+    "uuid": "^8.3.1"
   }
 }

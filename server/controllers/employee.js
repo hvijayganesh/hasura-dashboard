@@ -16,6 +16,15 @@ class EmployeeController {
       throw error;
     }
   }
+
+  create = async (req, h) => {
+    try {
+      let newEmployee = await this.employee.create(req.payload);
+      return h.response(newEmployee).code(201)
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 module.exports = EmployeeController;

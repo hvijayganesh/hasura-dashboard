@@ -13,6 +13,11 @@ class EmployeeRoutes {
         method: 'GET',
         path: '/employees',
         handler: this.employeeController.list
+      },
+      {
+        method: 'POST',
+        path: '/employee/',
+        handler: this.employeeController.create
       }
     ]
   }
