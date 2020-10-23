@@ -1,0 +1,24 @@
+{
+  "name": "hasura-dashboard-server",
+  "version": "1.0.0",
+  "description": "Server side code to expose apis to fetch and store data",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hvijayganesh/hasura-dashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hvijayganesh/hasura-dashboard/issues"
+  },
+  "homepage": "https://github.com/hvijayganesh/hasura-dashboard#readme",
+  "dependencies": {
+    "hapi": "^18.1.0",
+    "pg": "^8.4.1",
+    "pg-promise": "^10.7.0"
+  }
+}
