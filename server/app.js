@@ -13,7 +13,10 @@ class AppLoader {
   createHapiServer() {
     return new Hapi.Server({
       port: Config.PORT,
-      host: Config.HOST
+      host: Config.HOST,
+      routes: {
+        cors: true
+      }
     })
   }
 
