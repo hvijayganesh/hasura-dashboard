@@ -25,7 +25,7 @@ class EmployeeRoutes {
         path: '/{path*}',
         handler: {
           directory: {
-            path: Path.join(__dirname, process.env.CLIENT_BUILD_PATH || '../../client/build'),
+            path: Path.join(__dirname, process.env.CLIENT_BUILD_PATH || '../client/build'),
             listing: false,
             index: true
           }
