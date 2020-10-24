@@ -1,6 +1,7 @@
 'use strict'
 
 const EmployeeController = require('../controllers/employee');
+const Path = require('path');
 
 class EmployeeRoutes {
   constructor(appData) {
@@ -18,6 +19,17 @@ class EmployeeRoutes {
         method: 'POST',
         path: '/employee/',
         handler: this.employeeController.create
+      },
+      {
+        method: 'GET',
+        path: '/{path*}',
+        handler: {
+          directory: {
+            path: Path.join(__dirname, process.env.CLIENT_BUILD_PATH || '../../client/build'),
+            listing: false,
+            index: true
+          }
+        }
       }
     ]
   }

@@ -4,6 +4,7 @@ const Hapi = require('hapi')
 const db = require('./database').db;
 const Config = require('./config');
 const EmployeeRoutes = require('./routes/employee-routes');
+const Inert = require('inert');
 
 class AppLoader {
   constructor() {
@@ -35,6 +36,7 @@ class AppLoader {
     try {
       me.initDb();
       const server = me.createHapiServer();
+      await server.register(Inert);
       me.registerRoutes(server);
       await server.start();
       console.log(`Server running at: ${server.info.uri}`);
