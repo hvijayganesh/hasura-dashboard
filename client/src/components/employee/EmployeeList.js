@@ -9,7 +9,7 @@ export class EmployeeList extends Component {
 
     const employeeList = employees.map((employee) => {
       return (
-        <Employee key={employee.employeeId} employee={employee}></Employee>
+        <Employee key={employee.EmployeeId} employee={employee}></Employee>
       );
     })
 
