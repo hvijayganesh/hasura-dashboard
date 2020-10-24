@@ -13,8 +13,8 @@ class AppLoader {
 
   createHapiServer() {
     return new Hapi.Server({
-      port: Config.PORT,
-      host: Config.HOST,
+      port: process.env.PORT || Config.SERVER.port,
+      host: process.env.HOST || Config.SERVER.host,
       routes: {
         cors: true
       }
@@ -22,7 +22,7 @@ class AppLoader {
   }
 
   initDb() {
-    this.appData.pgp = db(Config.DATABASE_URL);
+    this.appData.pgp = db(process.env.DATABASE_URL || Config.DATABASE_URL);
   }
 
   registerRoutes(server) {
